@@ -10,12 +10,10 @@
 
     <!--Description-->
     
-        <meta name="description" content="#1019. General Palindromic Number
-原题链接
-###题目分析：水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。
-###总结教训：
-
-一个是边界极限的问题：原文中一处提到">
+        <meta name="description" content="1019. General Palindromic Number原题链接
+题目分析：水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。
+总结教训：
+一个是边界极限的问题：原文中一处提到输入的十进制数字N">
     
 
     <!--Author-->
@@ -204,16 +202,13 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>#1019. General Palindromic Number</p>
-<p><a href="https://www.patest.cn/contests/pat-a-practise/1019" target="_blank" rel="external">原题链接</a></p>
-<p>###题目分析：<br>水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。</p>
-<p>###总结教训：</p>
-<ul>
+                <h1 id="1019-General-Palindromic-Number"><a href="#1019-General-Palindromic-Number" class="headerlink" title="1019. General Palindromic Number"></a>1019. General Palindromic Number</h1><p><a href="https://www.patest.cn/contests/pat-a-practise/1019" target="_blank" rel="external">原题链接</a></p>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。</p>
+<h3 id="总结教训："><a href="#总结教训：" class="headerlink" title="总结教训："></a>总结教训：</h3><ul>
 <li>一个是边界极限的问题：原文中一处提到输入的十进制数字N是 not negative，随后又提了一遍N的取值从0到10的九次方，这个点上卡了一个得分点。</li>
 <li>还有一个是方法使用的问题，一开始用字符串的时候，采用<em>修正值+’0’</em>的方法，但是这样的话遇到十进制以上就吃瘪，看了下别人的代码，换成vector后以后完美通过。</li>
 </ul>
-<p>###源代码：</p>
-<pre><code>#include &lt;bits/stdc++.h&gt;
+<h3 id="源代码："><a href="#源代码：" class="headerlink" title="源代码："></a>源代码：</h3><pre><code>#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int main(void)
 {
