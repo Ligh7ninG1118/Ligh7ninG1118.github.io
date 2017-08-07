@@ -10,6 +10,13 @@
 
     <!--Description-->
     
+        <meta name="description" content="#1019. General Palindromic Number
+原题链接
+###题目分析：水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。
+###总结教训：
+
+一个是边界极限的问题：原文中一处提到">
+    
 
     <!--Author-->
     
@@ -18,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="tags"/>
+        <meta property="og:title" content="PAT(A) 1019. General Palindromic Number"/>
     
 
     <!--Open Graph Description-->
@@ -40,7 +47,7 @@
 
     <!-- Title -->
     
-    <title>tags - Nightingale&#39;s Retreat</title>
+    <title>PAT(A) 1019. General Palindromic Number - Nightingale&#39;s Retreat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,91 +149,121 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-
-    <header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>tags</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
+<header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
-                    <div class="post-preview">
-    <a href="/tags/Random-Stuff/">
-        <h1 class="post-title archive">
-            Random Stuff
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/Diary/">
-        <h1 class="post-title archive">
-            Diary
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/Algorithm/">
-        <h1 class="post-title archive">
-            Algorithm
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/CS/">
-        <h1 class="post-title archive">
-            CS
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/Solution/">
-        <h1 class="post-title archive">
-            Solution
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/Repost/">
-        <h1 class="post-title archive">
-            Repost
-        </h1>
-    </a>
-</div>
-                
-                    <div class="post-preview">
-    <a href="/tags/Milestone/">
-        <h1 class="post-title archive">
-            Milestone
-        </h1>
-    </a>
-</div>
-                
-                <div class="archive-before-pagination"></div>
+                <div class="post-heading">
+                    <h1>PAT(A) 1019. General Palindromic Number</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-08
+                        
+                    </span>
+                </div>
             </div>
         </div>
     </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
 
 
+<a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/CS/">#CS</a> <a href="/tags/Solution/">#Solution</a>
 
 
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
 
+<a href="/categories/Road-of-Algorithm/">Road of Algorithm</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>#1019. General Palindromic Number</p>
+<p><a href="https://www.patest.cn/contests/pat-a-practise/1019" target="_blank" rel="external">原题链接</a></p>
+<p>###题目分析：<br>水题一道，题目写了一大片 + 很严谨，但其实说的就是回文判断再加上进制问题。获取十进制数字后，将其转为B进制后进行回文判断，简单的数字字符处理问题。</p>
+<p>###总结教训：</p>
+<ul>
+<li>一个是边界极限的问题：原文中一处提到输入的十进制数字N是 not negative，随后又提了一遍N的取值从0到10的九次方，这个点上卡了一个得分点。</li>
+<li>还有一个是方法使用的问题，一开始用字符串的时候，采用<em>修正值+’0’</em>的方法，但是这样的话遇到十进制以上就吃瘪，看了下别人的代码，换成vector后以后完美通过。</li>
+</ul>
+<p>###源代码：</p>
+<pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(void)
+{
+    int n, b;
+    bool isPdm = true;
+    vector&lt;int&gt; v;
+    cin&gt;&gt;n&gt;&gt;b;
+    if(n==0)
+        v.push_back(0);
+    while(n)
+    {
+        v.push_back(n%b);
+        n/=b;
+    }
+    for(int i=0;i&lt;v.size();i++)
+    {
+        if(v[i] != v[v.size()-1-i])
+        {
+                isPdm = false;
+            break;
+            }
+    }
+    if(isPdm)
+        cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+    else
+        cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+    for(int i=v.size()-1;i&gt;=0;i--)
+    {
+        cout&lt;&lt;v[i];
+        if(i)
+            cout&lt;&lt;&quot; &quot;;
+    }
+    return 0;
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
 
     <!-- Footer -->
     <hr />
