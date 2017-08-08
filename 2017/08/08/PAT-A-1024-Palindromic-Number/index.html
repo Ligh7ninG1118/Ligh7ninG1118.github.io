@@ -10,6 +10,11 @@
 
     <!--Description-->
     
+        <meta name="description" content="1024. Palindromic Number原题链接
+题目分析：水题，依然是数字字符处理，结合了回文，字符串相加之类的。
+总结教训：
+数据范围到10的10次方，想了想用了Long long int，但是没想到这个数据还要经过最多100次的加减，最后如果用LL的要爆炸，所以采用字符串类型，模拟加法">
+    
 
     <!--Author-->
     
@@ -18,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Nightingale&#39;s Retreat"/>
+        <meta property="og:title" content="PAT(A) 1024. Palindromic Number"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +34,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>Solution - Nightingale&#39;s Retreat</title>
+    <title>PAT(A) 1024. Palindromic Number - Nightingale&#39;s Retreat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,88 +147,130 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Solution</h1>
+                <div class="post-heading">
+                    <h1>PAT(A) 1024. Palindromic Number</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-08
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/CS/">#CS</a> <a href="/tags/Solution/">#Solution</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Road-of-Algorithm/">Road of Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/09/PAT-A-1015-Reversible-Primes/">
-        <h1 class="post-title archive">
-            PAT(A) 1015. Reversible Primes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-09
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1036-Boys-vs-Girls/">
-        <h1 class="post-title archive">
-            PAT(A) 1036. Boys vs Girls
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1024-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1024. Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1019-General-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1019. General Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="1024-Palindromic-Number"><a href="#1024-Palindromic-Number" class="headerlink" title="1024. Palindromic Number"></a>1024. Palindromic Number</h1><p><a href="https://www.patest.cn/contests/pat-a-practise/1024" target="_blank" rel="external">原题链接</a></p>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>水题，依然是数字字符处理，结合了回文，字符串相加之类的。</p>
+<h3 id="总结教训："><a href="#总结教训：" class="headerlink" title="总结教训："></a>总结教训：</h3><ul>
+<li>数据范围到10的10次方，想了想用了Long long int，但是没想到这个数据还要经过最多100次的加减，最后如果用LL的要爆炸，所以采用字符串类型，模拟加法器计算。</li>
 </ul>
+<h3 id="源代码："><a href="#源代码：" class="headerlink" title="源代码："></a>源代码：</h3><pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+using namespace std;
+
+
+string add(string s,string rev)
+{
+    string res=&quot;&quot;;
+    int k = s.size();
+    int sum,carry=0;
+    int i;
+    for(i=k-1;i&gt;=0;i--)
+    {
+        sum = s[i]+rev[i]-&apos;0&apos;-&apos;0&apos;+carry;
+        res.insert(res.begin(),sum%10+&apos;0&apos;);
+        carry = sum/10;
+    }
+    if(carry)res.insert(res.begin(),carry+&apos;0&apos;);
+    return res;
+}
+
+bool isPalindromic(string&amp; s,string&amp; rev)
+{
+    rev = s;
+    reverse(rev.begin(),rev.end());         //原字符串反转
+    if(s==rev) return true;
+    s = add(s,rev);
+    return false;
+}
+
+int main()
+{
+    string s,rev;
+    int k;
+    cin&gt;&gt;s&gt;&gt;k;
+    int i;
+    for(i=0;i&lt;k;i++)
+    {
+        if(isPalindromic(s,rev))
+        {
+            break;
+        }
+    }
+    cout&lt;&lt;s&lt;&lt;endl&lt;&lt;i&lt;&lt;endl;
+    system(&quot;PAUSE&quot;);
+    return 0;
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />

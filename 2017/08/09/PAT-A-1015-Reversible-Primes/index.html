@@ -10,6 +10,18 @@
 
     <!--Description-->
     
+        <meta name="description" content="1015. Reversible Primes原题链接
+题目分析：水题，数字处理，素数判断，进制转换，倒叙
+总结教训：
+简化代码 简化步骤
+
+源代码：#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+bool isPrime(int s)
+{
+">
+    
 
     <!--Author-->
     
@@ -18,7 +30,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Nightingale&#39;s Retreat"/>
+        <meta property="og:title" content="PAT(A) 1015. Reversible Primes"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +41,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>Solution - Nightingale&#39;s Retreat</title>
+    <title>PAT(A) 1015. Reversible Primes - Nightingale&#39;s Retreat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,88 +154,127 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Solution</h1>
+                <div class="post-heading">
+                    <h1>PAT(A) 1015. Reversible Primes</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-09
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/CS/">#CS</a> <a href="/tags/Solution/">#Solution</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Road-of-Algorithm/">Road of Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/09/PAT-A-1015-Reversible-Primes/">
-        <h1 class="post-title archive">
-            PAT(A) 1015. Reversible Primes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-09
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1036-Boys-vs-Girls/">
-        <h1 class="post-title archive">
-            PAT(A) 1036. Boys vs Girls
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1024-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1024. Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1019-General-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1019. General Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="1015-Reversible-Primes"><a href="#1015-Reversible-Primes" class="headerlink" title="1015. Reversible Primes"></a>1015. Reversible Primes</h1><p><a href="https://www.patest.cn/contests/pat-a-practise/1015" target="_blank" rel="external">原题链接</a></p>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>水题，数字处理，素数判断，进制转换，倒叙</p>
+<h3 id="总结教训："><a href="#总结教训：" class="headerlink" title="总结教训："></a>总结教训：</h3><ul>
+<li>简化代码 简化步骤</li>
 </ul>
+<h3 id="源代码："><a href="#源代码：" class="headerlink" title="源代码："></a>源代码：</h3><pre><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+bool isPrime(int s)
+{
+    if(s &lt; 2)
+        return false;
+    if(s==2 || s==3)
+        return true;
+    for(int i=2;i&lt;=sqrt(s);i++)
+        if(s%i==0)
+            return false;
+    return true;
+}
+
+int rev_num(int num1,int radix)
+{
+    int num2 = 0;
+    while(num1)
+    {
+        num2 *= radix;
+        num2 += num1 % radix;
+        num1 /= radix;
+    }
+    return num2;
+}
+
+int main(void)
+{
+    int n, d;
+    while(scanf(&quot;%d&quot;, &amp;n))
+    {
+        if(n&lt;0)
+            break;
+        scanf(&quot;%d&quot;, &amp;d);
+
+        int rev= rev_num(n,d);
+
+        if(isPrime(n) &amp;&amp; isPrime(rev))
+            cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+        else
+            cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
