@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="1013. Battle Over Cities原题链接
+题目分析：图搜索问题，并查集或者DFS，第一遍选了较为熟悉的dfs。DFS解法即为深度遍历全部点，遍历情况记录入visited节点，极端情况中：可从第一点遍历全部其他点，则不用遍历其他点，不用修复任何边；无法从任一点到达任一其他点，则需要全部">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Nightingale&#39;s Retreat"/>
+        <meta property="og:title" content="PAT(A) 1013. Battle Over Cities"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Archiv - Nightingale&#39;s Retreat</title>
+    <title>PAT(A) 1013. Battle Over Cities - Nightingale&#39;s Retreat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,140 +145,135 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archiv</h1>
+                <div class="post-heading">
+                    <h1>PAT(A) 1013. Battle Over Cities</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-11
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/CS/">#CS</a> <a href="/tags/Solution/">#Solution</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Road-of-Algorithm/">Road of Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/11/PAT-A-1013-Battle-Over-Cities/">
-        <h1 class="post-title archive">
-            PAT(A) 1013. Battle Over Cities
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-11
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/09/PAT-A-1015-Reversible-Primes/">
-        <h1 class="post-title archive">
-            PAT(A) 1015. Reversible Primes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1036-Boys-vs-Girls/">
-        <h1 class="post-title archive">
-            PAT(A) 1036. Boys vs Girls
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1024-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1024. Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1019-General-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1019. General Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/Repost PAT-A-题型分析/">
-        <h1 class="post-title archive">
-            Repost PAT (A) 题型分析
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/07/PAT-Basic-70-All-Clear-MILESTONE/">
-        <h1 class="post-title archive">
-            PAT Basic 70 All Clear MILESTONE
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-07
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/05/The-Alpha/">
-        <h1 class="post-title archive">
-            The Alpha
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-05
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="1013-Battle-Over-Cities"><a href="#1013-Battle-Over-Cities" class="headerlink" title="1013. Battle Over Cities"></a>1013. Battle Over Cities</h1><p><a href="https://www.patest.cn/contests/pat-a-practise/1013" target="_blank" rel="external">原题链接</a></p>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><p>图搜索问题，并查集或者DFS，第一遍选了较为熟悉的dfs。DFS解法即为深度遍历全部点，遍历情况记录入visited节点，极端情况中：可从第一点遍历全部其他点，则不用遍历其他点，不用修复任何边；无法从任一点到达任一其他点，则需要全部修复边。并查集方法 WIP。</p>
+<h3 id="总结教训："><a href="#总结教训：" class="headerlink" title="总结教训："></a>总结教训：</h3><ul>
+<li>WIP</li>
 </ul>
+<h3 id="源代码："><a href="#源代码：" class="headerlink" title="源代码："></a>源代码：</h3><pre><code>#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+#define MAXN 1000
+
+int ma[MAXN][MAXN];
+int vst[MAXN];
+int n, m, k;
+
+void dfs(int c)
+{
+    vst[c]=1;
+    for(int i=1;i&lt;=n;i++)
+    {
+        if(!vst[i] &amp;&amp; ma[c][i])
+        {
+            dfs(i);
+        }
+    }
+}
+
+int main(void)
+{
+    cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;
+    memset(ma, 0, sizeof(ma));
+    for (int i = 0;i &lt; m; i++)
+    {
+        int t1, t2;
+        cin &gt;&gt; t1 &gt;&gt; t2;
+        ma[t1][t2] = 1;
+        ma[t2][t1] = 1;
+    }
+    int cnt = 0;
+    while (k--)
+    {
+        int temp;
+        cnt=0;
+        memset(vst, 0, sizeof(vst));
+        cin &gt;&gt; temp;
+        vst[temp] = 1;
+        for (int i = 1; i &lt;= n; i++)
+        {
+            if (!vst[i])
+            {
+                dfs(i);
+                cnt++;
+            }
+        }
+        cout &lt;&lt; cnt-1 &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
