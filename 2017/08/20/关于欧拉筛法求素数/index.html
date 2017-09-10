@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="先代码
+const long N = 200000;
+long prime[N] = {0},num_prime = 0;
+int isNotPrime[N] = {1, 1};
+for(long i = 2 ; i &amp;lt; N ; i ++)
+{
+    if(! isNotPrime[i])
+">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Nightingale&#39;s Retreat"/>
+        <meta property="og:title" content="关于欧拉筛法求素数“"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +49,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2017 - Nightingale&#39;s Retreat</title>
+    <title>关于欧拉筛法求素数“ - Nightingale&#39;s Retreat</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,168 +151,94 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/landscape-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2017</h1>
+                <div class="post-heading">
+                    <h1>关于欧拉筛法求素数“</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-20
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/CS/">#CS</a> <a href="/tags/KP/">#KP</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Road-of-Algorithm/">Road of Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/09/10/First-Week-Worst-Week/">
-        <h1 class="post-title archive">
-            First Week Worst Week
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-10
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/08/20/关于欧拉筛法求素数/">
-        <h1 class="post-title archive">
-            关于欧拉筛法求素数“
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-20
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>先代码</p>
+<pre><code>const long N = 200000;
+long prime[N] = {0},num_prime = 0;
+int isNotPrime[N] = {1, 1};
+for(long i = 2 ; i &lt; N ; i ++)
+{
+    if(! isNotPrime[i])
+        prime[num_prime ++]=i;
+    //关键处1
+    for(long j = 0 ; j &lt; num_prime &amp;&amp; i * prime[j] &lt;  N ; j ++)
+    {
+        isNotPrime[i * prime[j]] = 1;
+        if( !(i % prime[j] ) )  //关键处2
+            break;
+    }
+}
+</code></pre><p>开始首先将0和1标记为非素数，然后开始从2到N（所需素数最大范围）进行遍历。每次遍历开始先判断数字是否为素数，是则加入素数列（此处保证一定能判断出是否为素数）。随后，对于整个素数列，将所有数相乘的积判为合数</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2017/08/11/并查集相关/">
-        <h1 class="post-title archive">
-            并查集相关
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-11
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/08/11/PAT-A-1013-Battle-Over-Cities/">
-        <h1 class="post-title archive">
-            PAT(A) 1013. Battle Over Cities
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/09/PAT-A-1015-Reversible-Primes/">
-        <h1 class="post-title archive">
-            PAT(A) 1015. Reversible Primes
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1036-Boys-vs-Girls/">
-        <h1 class="post-title archive">
-            PAT(A) 1036. Boys vs Girls
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1024-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1024. Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/PAT-A-1019-General-Palindromic-Number/">
-        <h1 class="post-title archive">
-            PAT(A) 1019. General Palindromic Number
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/08/Repost PAT-A-题型分析/">
-        <h1 class="post-title archive">
-            Repost PAT (A) 题型分析
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/08/07/PAT-Basic-70-All-Clear-MILESTONE/">
-        <h1 class="post-title archive">
-            PAT Basic 70 All Clear MILESTONE
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-07
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/2017/page/2/">Vorherige Seite  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
